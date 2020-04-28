@@ -27,6 +27,7 @@ This is a small all in one digial amp projekt. This base is an Arduino Uno. The 
 13. Arduino Uno
 14. I'm using a adapter power supply. But you can use every 5v power supply with enough power.
 15. Class d amp for example XH-M177 PAM8403
+16. MCP6002
 
 
 
