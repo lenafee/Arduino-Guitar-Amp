@@ -1,5 +1,3 @@
-#include "distorsion.c"
-
 //defining hardware resources.
 #define LED 13
 #define FOOTSWITCH 12
