@@ -16,6 +16,7 @@ This is a small all in one digial amp projekt. This base is an Arduino Uno. The 
 1.  C1, C4, C8 = 100nf
 2.  C2, C6, C5, C7 = 6.8nF
 3.  C3 = 270pF
+4.  C9, C10 = 4.7uF electrolytic capacitor
 4.  R1, R4, R11 = 1MOhm
 5.  R2, R3 = 4.5kOhm
 8.  R5, R8, R7, R10, R12 = 4.7kOhm
@@ -28,6 +29,7 @@ This is a small all in one digial amp projekt. This base is an Arduino Uno. The 
 14. I'm using a adapter power supply. But you can use every 5v power supply with enough power.
 15. Class d amp for example XH-M177 PAM8403
 16. MCP6002
+17.
 
 
 
