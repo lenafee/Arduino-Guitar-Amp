@@ -17,19 +17,19 @@ This is a small all in one digial amp projekt. This base is an Arduino Uno. The 
 2.  C2, C6, C5, C7 = 6.8nF
 3.  C3 = 270pF
 4.  C9, C10 = 4.7uF electrolytic capacitor
-4.  R1, R4, R11 = 1MOhm
-5.  R2, R3 = 4.5kOhm
-8.  R5, R8, R7, R10, R12 = 4.7kOhm
-9.  R6 = 100kOhm
-10. R9 = 220kOhm
-11. P1 = 500k Trimmer
-12. K1 = screw terminal block
+5.  R1, R4, R11 = 1MOhm
+6.  R2, R3 = 4.5kOhm
+7.  R5, R8, R7, R10, R12 = 4.7kOhm
+8.  R6 = 100kOhm
+9. R9 = 220kOhm
+10. P1 = 500k Trimmer
+11. K1 = screw terminal block
 12. Arduino Prototype Shield
 13. Arduino Uno
 14. I'm using a adapter power supply. But you can use every 5v power supply with enough power.
 15. Class d amp for example XH-M177 PAM8403
 16. MCP6002
-17.
+
 
 
 
