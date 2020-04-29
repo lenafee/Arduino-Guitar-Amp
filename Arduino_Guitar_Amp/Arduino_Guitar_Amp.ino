@@ -1,9 +1,4 @@
-//defining hardware resources.
-#define LED 13
-#define FOOTSWITCH 12
-#define TOGGLE 2
-#define PUSHBUTTON_1 A5
-#define PUSHBUTTON_2 A4
+#include "distorsion.c"
 
 //defining the output PWM parameters
 #define PWM_FREQ 0x00FF // pwm frequency - 31.3KHz
@@ -16,11 +11,6 @@ int counter=0;
 byte ADC_low, ADC_high;
 
 void setup() {
-  //setup IO
-  pinMode(FOOTSWITCH, INPUT_PULLUP);
-  pinMode(PUSHBUTTON_1, INPUT_PULLUP);
-  pinMode(PUSHBUTTON_2, INPUT_PULLUP);
-  pinMode(LED, OUTPUT);
   
   // setup ADC
   ADMUX = 0x60; // left adjust, adc0, internal vcc
@@ -38,13 +28,7 @@ void setup() {
   sei(); // turn on interrupts - not really necessary with arduino
   }
 
-//Simple Overdrive by cutting the top of the signal. Uses hardClipping
-  void overdriveHardClipp(int level){
-      if(input > level){
-          input = level;
-        }
 
-    }
 
   void overdriveSoftClipp(int level){
       if(input > level){
@@ -72,11 +56,7 @@ void setup() {
 
 void loop() 
 {
-  //Turn on the LED if the effect is ON.
-  if (digitalRead(FOOTSWITCH)) digitalWrite(LED, HIGH); 
-    else  digitalWrite(LED, LOW);
   
-  //nothing else here, all happens in the Timer 1 interruption.
 }
 
 ISR(TIMER1_CAPT_vect) 
@@ -86,10 +66,16 @@ ISR(TIMER1_CAPT_vect)
   ADC_high = ADCH;
   //construct the input sumple summing the ADC low and high byte.
   input = ((ADC_high << 8) | ADC_low) + 0x8000; // make a signed 16b value
-  
-  overdriveHardClipp(1000);
+
+  //overdriveBiasLevelNegativeHalfHardClipp(1000, &input);
+  //overdriveBiasLevelPositiveHalfHardClipp(1000, &input);
+  //overdriveHardClipping(1000, &input);
+  //overdrivePositiveHalfHardClipp();
   //overdriveSoftClipp(1000);
   //testOverdrive();
+  //distorsionMetal(7, &input);
+  //overdrivePositiveSoftClipping(500, &input);
+  overdriveSoftClipping(1000, &input);
 
   input = input*2;
   //write the PWM signal
