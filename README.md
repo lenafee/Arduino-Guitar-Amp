@@ -1,7 +1,7 @@
 # Arduino-Guitar-Amp
 
 ## Introduction
-This is a small all in one digial amp projekt. This base is an Arduino Uno. The amp is programmeble and you are able to design a hole variety of effects. The hole system can run on batteries and can be includet in nearly every speaker. In my case I addet the amp into an old broken guitar amp but I also tested it with an hifi speaker. The project was inspired by the guitar pedal from Electrosmash.
+This is a small all in one digial amp projekt. This base is an Arduino Uno. The amp is programmeble and you are able to design a hole variety of effects. The hole system can run on batteries and can be includet in nearly every speaker. In my case I addet the amp into an old broken guitar amp but I also tested it with an hifi speaker. The project was inspired by the guitar pedal from Electrosmash https://www.electrosmash.com/pedalshield-uno.
 
 ## Effects
 * Volume
