@@ -1,14 +1,20 @@
 #include "distorsion.c"
+#include "generalFunctions.c"
+//#include "echo.c"
 
 //defining the output PWM parameters
 #define PWM_FREQ 0x00FF // pwm frequency - 31.3KHz
 #define PWM_MODE 0 // Fast (1) or Phase Correct (0)
 #define PWM_QTY 2 // 2 PWMs in parallel
 
+
 //other variables
 int input, vol_variable=512;
 int counter=0;
-byte ADC_low, ADC_high;
+int ADC_low, ADC_high;
+int reverbBuffer[700];
+int reverbBufferCounter = 0;
+
 
 void setup() {
   
@@ -27,31 +33,6 @@ void setup() {
   DDRB |= ((PWM_QTY << 1) | 0x02); // turn on outputs
   sei(); // turn on interrupts - not really necessary with arduino
   }
-
-
-
-  void overdriveSoftClipp(int level){
-      if(input > level){
-          input = input >> 6;
-        }
-      //if(input < -level){
-      //    input = input << 6;
-      //  }
-    }
-
-  void testOverdrive(){
-      if(input > 1000){
-          input = 1000 - input;
-        }
-    }
-
-  void boost(int level){
-      //TODO
-    }
-
-  void volume(int level){
-      //TODO
-    }
     
 
 void loop() 
@@ -64,20 +45,37 @@ ISR(TIMER1_CAPT_vect)
   // get ADC data
   ADC_low = ADCL; // you need to fetch the low byte first
   ADC_high = ADCH;
+
+
+  
+  
   //construct the input sumple summing the ADC low and high byte.
+
+ 
+
+
+//Increse/reset delay counter.   
+
+  
   input = ((ADC_high << 8) | ADC_low) + 0x8000; // make a signed 16b value
+
+  reverbBuffer[reverbBufferCounter] = ADC_high;
+  reverbBufferCounter++;
+  if(reverbBufferCounter>=700)reverbBufferCounter=0;
+  //input = input + (((reverbBuffer[reverbBufferCounter] << 8) | ADC_low) + 0x8000);
 
   //overdriveBiasLevelNegativeHalfHardClipp(1000, &input);
   //overdriveBiasLevelPositiveHalfHardClipp(1000, &input);
   //overdriveHardClipping(1000, &input);
   //overdrivePositiveHalfHardClipp();
-  //overdriveSoftClipp(1000);
+  //overdriveSoftClipping(1000, &input);
   //testOverdrive();
   //distorsionMetal(7, &input);
   //overdrivePositiveSoftClipping(500, &input);
-  overdriveSoftClipping(1000, &input);
-
-  input = input*2;
+  //overdriveSoftClipping(1000, &input);
+  //volume(2, &input);
+  //boost(0, &input);
+  //boostWithMap(20000, &input);
   //write the PWM signal
   OCR1AL = ((input + 0x8000) >> 8); // convert to unsigned, send out high byte
   OCR1BL = input; // send out low byte
