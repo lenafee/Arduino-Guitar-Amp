@@ -1,7 +1,18 @@
 void volume(int level , int *input){
-    //TODO
+    *input = *input >> level;
 }
 
-void boost(int level , int *input){
-    //TODO
+void volumeWithMap(int boostValue, int *input){
+   *input = map(*input, -32768, +32768,-boostValue, boostValue);
 }
+
+
+void boost(int active , int *input){
+    *input = *input << 2;
+}
+
+void boostWithMap(int boostValue, int *input){
+   *input = map(*input, -32768, +32768,-boostValue, boostValue);
+}
+
+//TODO implement some filters
