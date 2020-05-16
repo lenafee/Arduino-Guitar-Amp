@@ -1,6 +1,9 @@
-#include "distorsion.c"
-#include "generalFunctions.c"
-//#include "echo.c"
+#include "distorsion.h"
+#include "echo.h"
+#include "generalFunctions.h"
+#include "specialSounds.h"
+#include "display.h"
+
 
 //defining the output PWM parameters
 #define PWM_FREQ 0x00FF // pwm frequency - 31.3KHz
@@ -12,11 +15,16 @@
 int input, vol_variable=512;
 int counter=0;
 int ADC_low, ADC_high;
-int reverbBuffer[700];
-int reverbBufferCounter = 0;
 
 
 void setup() {
+  //initialize display
+  createStartMonitor();
+
+  //setButtons as input
+  pinMode(menuButton, INPUT);
+  pinMode(levelButtonPlus, INPUT);
+  pinMode(levelButtonMinus, INPUT);
   
   // setup ADC
   ADMUX = 0x60; // left adjust, adc0, internal vcc
@@ -37,7 +45,8 @@ void setup() {
 
 void loop() 
 {
-  
+   showMenu();
+   delay(200);
 }
 
 ISR(TIMER1_CAPT_vect) 
@@ -55,27 +64,28 @@ ISR(TIMER1_CAPT_vect)
 
 
 //Increse/reset delay counter.   
-
   
   input = ((ADC_high << 8) | ADC_low) + 0x8000; // make a signed 16b value
 
-  reverbBuffer[reverbBufferCounter] = ADC_high;
-  reverbBufferCounter++;
-  if(reverbBufferCounter>=700)reverbBufferCounter=0;
-  //input = input + (((reverbBuffer[reverbBufferCounter] << 8) | ADC_low) + 0x8000);
-
+  
+//  input = input + (((reverbBuffer[reverbBufferCounter] << 8) | ADC_low) + 0x8000);
+  //reverb(&input);
+  //fuzz(800, &input);
   //overdriveBiasLevelNegativeHalfHardClipp(1000, &input);
   //overdriveBiasLevelPositiveHalfHardClipp(1000, &input);
   //overdriveHardClipping(1000, &input);
   //overdrivePositiveHalfHardClipp();
   //overdriveSoftClipping(1000, &input);
   //testOverdrive();
-  //distorsionMetal(7, &input);
+  //distorsionMetal(8, &input);
   //overdrivePositiveSoftClipping(500, &input);
   //overdriveSoftClipping(1000, &input);
   //volume(2, &input);
   //boost(0, &input);
   //boostWithMap(20000, &input);
+  //volumeWithMap(16000, &input);
+  effectEnableQuery(&input);
+  
   //write the PWM signal
   OCR1AL = ((input + 0x8000) >> 8); // convert to unsigned, send out high byte
   OCR1BL = input; // send out low byte
