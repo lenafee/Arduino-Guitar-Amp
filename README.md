@@ -30,6 +30,22 @@ This is a small all in one digial amp projekt. This base is an Arduino Uno. The 
 * Class d amp for example XH-M177 PAM8403
 * MCP6002
 
+LINK EINFUEGEN
+* R13, R14, R15, R16 = 10kOhm
+* R17, R18, R19, R20 = 200Ohm
+* R20 = 100Ohm
+* R21 = 120Ohm
+* P2 = 10k Trimmer
+
+* red: Arduino power supply
+* yellow: Class D Amp power supply
+* green: Button 1-4
+* lightBlue: Led 1-4 supply
+
+
+
+
+
 
 
 
