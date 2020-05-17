@@ -1,3 +1,5 @@
+//This file contains the different overdrive, distorsion and fuzz effects.
+
 //This overdrive uses hard clipping on top and bottom
 void overdriveHardClipping(int level, int *input){
     if(*input > level){
@@ -24,12 +26,14 @@ void overdriveBiasLevelNegativeHalfHardClipping(int level, int *input){
     }
 }
 
+//This overdrive uses overdrive soft clip only on the positive side.
 void overdrivePositiveSoftClipping(int level, int *input){
     if(*input > level){
         *input = level + *input >> 2;
     }
 }
 
+//This overdrive uses softclipping on the top and on the bottom.
 void overdriveSoftClipping(int level, int *input){
     if(*input > level){
         *input = level + *input >> 2;
