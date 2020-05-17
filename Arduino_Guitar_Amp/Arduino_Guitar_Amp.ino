@@ -13,15 +13,14 @@
 
 //other variables
 int input, vol_variable=512;
-int counter=0;
 int ADC_low, ADC_high;
 
 
 void setup() {
-  //initialize display
+  //Creates the start screen
   createStartMonitor();
 
-  //setButtons as input
+  //Set the buttons as input
   pinMode(menuButton, INPUT);
   pinMode(levelButtonPlus, INPUT);
   pinMode(levelButtonMinus, INPUT);
@@ -55,35 +54,10 @@ ISR(TIMER1_CAPT_vect)
   ADC_low = ADCL; // you need to fetch the low byte first
   ADC_high = ADCH;
 
+  //Make a signed 16b value
+  input = ((ADC_high << 8) | ADC_low) + 0x8000;
 
-  
-  
-  //construct the input sumple summing the ADC low and high byte.
-
- 
-
-
-//Increse/reset delay counter.   
-  
-  input = ((ADC_high << 8) | ADC_low) + 0x8000; // make a signed 16b value
-
-  
-//  input = input + (((reverbBuffer[reverbBufferCounter] << 8) | ADC_low) + 0x8000);
-  //reverb(&input);
-  //fuzz(800, &input);
-  //overdriveBiasLevelNegativeHalfHardClipp(1000, &input);
-  //overdriveBiasLevelPositiveHalfHardClipp(1000, &input);
-  //overdriveHardClipping(1000, &input);
-  //overdrivePositiveHalfHardClipp();
-  //overdriveSoftClipping(1000, &input);
-  //testOverdrive();
-  //distorsionMetal(8, &input);
-  //overdrivePositiveSoftClipping(500, &input);
-  //overdriveSoftClipping(1000, &input);
-  //volume(2, &input);
-  //boost(0, &input);
-  //boostWithMap(20000, &input);
-  //volumeWithMap(16000, &input);
+  //Handels the different effects. Activates and deaktivates them. 
   effectEnableQuery(&input);
   
   //write the PWM signal
