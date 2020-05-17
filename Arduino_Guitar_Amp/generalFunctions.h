@@ -1,3 +1,9 @@
+/*
+ *  Contains the volume and boost functions. They do not work very well
+ *  because of the map fuction. The workload is a little bit to much for
+ *  the uno.
+  */
+
 void volume(int level , int *input){
     *input = *input >> level;
 }
