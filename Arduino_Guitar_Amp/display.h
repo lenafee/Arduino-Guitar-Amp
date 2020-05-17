@@ -1,22 +1,15 @@
+//This file manages the display, buttons and the effect handlig.
+
 #include <LiquidCrystal.h>
 
 LiquidCrystal lcd(7, 6, 5, 4, 3, 2);
+//Array of all the available effects.
 char* effectNameArray[] = {"Volume", "Boost", "Overdrive 1", "Overdrive 2", "Overdrive 3", "Overdrive 4", "Overdrive 5", "Distorsion 1", "Distorsion 2", "Fuzz", "Reverb", "Crazy Sound"};
+//Array to store the current level of each effect.
 int effectLevelArray[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-int volumeLevel = 0;
 int effectPointer = 11;
 
-byte Heart[] = {
-  B00000,
-  B01010,
-  B11111,
-  B11111,
-  B01110,
-  B00100,
-  B00000,
-  B00000
-};
-
+//Different Byte arrays for the start screen.
 byte Sound[] = {
   B00001,
   B00011,
@@ -39,17 +32,15 @@ byte Speaker[] = {
   B00000
 };
 
-
-
+//The three available buttons of the amp
 const int menuButton = 11;
 const int levelButtonPlus = 12;
 const int levelButtonMinus = 13;
-
 int levelButtonPlusState = 0;
 int levelButtonMinusState = 0;
 int menuButtonState = 0;
 
-
+//Creates the start screen for the amp. This will be seen when you boot the amp.
 void createStartMonitor(){
     lcd.createChar(0, Heart);
     lcd.createChar(1, Speaker);
@@ -74,13 +65,18 @@ void createStartMonitor(){
     lcd.write(byte(2));
   }
 
-
+/* 
+ *  Handles the screen functions. There are three different buttons.
+ *  With the first you can choose the different effects from the list.
+ *  The second and third are + and - for the effects.
+ */
 void showMenu(){
   
     menuButtonState = digitalRead(menuButton);
     levelButtonPlusState = digitalRead(levelButtonPlus);
     levelButtonMinusState = digitalRead(levelButtonMinus);
 
+    //+ Button
     if (levelButtonPlusState == HIGH){
         effectLevelArray[effectPointer]++;
         if(effectLevelArray[effectPointer] > 16) effectLevelArray[effectPointer] = 16;
@@ -90,6 +86,7 @@ void showMenu(){
         }
     }
 
+    //- Button
     if (levelButtonMinusState == HIGH){
         effectLevelArray[effectPointer]--;
         if(effectLevelArray[effectPointer] < 0) effectLevelArray[effectPointer] = 0;
@@ -102,6 +99,7 @@ void showMenu(){
 
     }
 
+    //Menu button
     if (menuButtonState == HIGH) {
         effectPointer++;
         if(effectPointer == 12) effectPointer = 0;
@@ -115,6 +113,7 @@ void showMenu(){
     }
 }
 
+//Arrays that contain preset levels for most effects.
 int volumeArray[16] = {1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000, 13000, 14000, 15000, 16000};
 int boostArray[16] = {16000, 17000, 18000, 19000, 20000, 21000, 22000, 23000, 24000, 25000, 26000, 27000, 28000, 29000, 30000, 31000};
 int overdriveArray[16] = {8000, 7000, 6000, 5000, 4000, 3500, 3000, 2500, 2000, 1800, 1600, 1400, 1200, 1000, 800, 500};
