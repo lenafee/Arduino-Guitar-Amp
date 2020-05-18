@@ -1,3 +1,6 @@
+/*
+ * This guitarAmp is based on the guitarPedal from Elektrosmash (https://www.electrosmash.com/pedalshield-uno)
+*/
 #include "distorsion.h"
 #include "echo.h"
 #include "generalFunctions.h"
@@ -45,7 +48,7 @@ void setup() {
 void loop() 
 {
    showMenu();
-   delay(200);
+   delay(200);//the delay is there to save some workload
 }
 
 ISR(TIMER1_CAPT_vect) 
