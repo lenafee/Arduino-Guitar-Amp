@@ -33,7 +33,7 @@ void overdrivePositiveSoftClipping(int level, int *input){
     }
 }
 
-//This overdrive uses softclipping on the top and on the bottom.
+//This is soft distorsion uses softclipping on the top and on the bottom.
 void overdriveSoftClipping(int level, int *input){
     if(*input > level){
         *input = level + *input >> 2;
@@ -50,6 +50,16 @@ void overdriveBiasLevelPositiveHalfHardClipping(int level, int *input){
         *input = level;
     }
 }
+
+//This overdrive uses a sine wave a specific level
+void overdriveSineWave(int level, int *input){
+    if(*input > level){
+         ((level >> 4) * sin(*input)) + level;
+      }
+    if(*input < -level){
+         -level - ((level >> 4) * sin(*input)) ;
+      }
+  }
 
 //Metal distorsion. Hard distorsion. Unlike the other distorsion its calculatet by a formula.
 void distorsionMetal(int level, int *input){
