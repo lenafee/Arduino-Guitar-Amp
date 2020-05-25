@@ -75,6 +75,19 @@ This is the final circuit that I have used in the amp. The circuit has eight mai
 * green: Button 1-4
 * lightBlue: Led 1-4 supply
 
+## Used programs
+
+* Arduino IDE
+* Code Blocks
+* Dia
+* Igor Pro
+* Physics Toolbox
+* Overleaf
+* fritzing
+* Lochmaster
+* Reaper
+* VSDC Video Editor
+
 
 
 
