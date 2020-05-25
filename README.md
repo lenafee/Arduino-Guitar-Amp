@@ -1,5 +1,8 @@
 # CTAG Signature Guitar Amp
 
+![ArduinoGuitarAmp (7)](https://user-images.githubusercontent.com/64489709/82821872-25408800-9ea5-11ea-9ca0-7bfcabd32c90.jpeg)
+
+
 ## Introduction
 This is a small all in one digial amp projekt. This base is an Arduino Uno. The amp is programmeble and you are able to design a hole variety of effects. The hole system can run on batteries and can be includet in nearly every speaker. In my case I addet the amp into an old broken guitar amp but I also tested it with an hifi speaker. The amp features a lcd display and different buttons to choose the effects. The project was inspired by the guitar pedal from Electrosmash https://www.electrosmash.com/pedalshield-uno.
 
