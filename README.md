@@ -6,6 +6,11 @@
 ## Introduction
 This is a small all in one digial amp projekt. This base is an Arduino Uno. The amp is programmeble and you are able to design a hole variety of effects. The hole system can run on batteries and can be includet in nearly every speaker. In my case I addet the amp into an old broken guitar amp but I also tested it with an hifi speaker. The amp features a lcd display and different buttons to choose the effects. The project was inspired by the guitar pedal from Electrosmash https://www.electrosmash.com/pedalshield-uno.
 
+## Examples
+Here are two example videos of the amp. The video shows the sound and basic effects of the amp.
+* https://www.youtube.com/watch?v=WST0WDY9Kv4
+* 
+
 ## Effects
 * Volume
 * Boost
