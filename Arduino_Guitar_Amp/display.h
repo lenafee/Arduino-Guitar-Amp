@@ -42,7 +42,6 @@ int menuButtonState = 0;
 
 //Creates the start screen for the amp. This will be seen when you boot the amp.
 void createStartMonitor(){
-    lcd.createChar(0, Heart);
     lcd.createChar(1, Speaker);
     lcd.createChar(2, Sound);
     lcd.begin(16, 2);

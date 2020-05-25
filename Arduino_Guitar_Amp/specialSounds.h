@@ -282,7 +282,7 @@ const byte triangleWave[] = {
     }
 
   //Tremolo with triangle waveform
-  void tremoloSin(int *input){
+  void tremoloTriangle(int *input){
       triWaveCounter++;
       if(triWaveCounter >= 1000){
           triWaveCounter = 0;

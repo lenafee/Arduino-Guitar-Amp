@@ -47,8 +47,10 @@ void setup() {
 
 void loop() 
 {
+   //enables buttons and display
    showMenu();
-   delay(200);//the delay is there to save some workload
+   //the delay is there to save some workload
+   delay(200);
 }
 
 ISR(TIMER1_CAPT_vect) 
