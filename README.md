@@ -9,7 +9,7 @@ This is a small all in one digial amp projekt. This base is an Arduino Uno. The 
 ## Examples
 Here are two example videos of the amp. The video shows the sound and basic effects of the amp.
 * https://www.youtube.com/watch?v=WST0WDY9Kv4
-* 
+* https://www.youtube.com/watch?v=0busb7s8Uys
 
 ## Effects
 * Volume
