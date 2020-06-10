@@ -36,15 +36,15 @@ Here are two example videos of the amp. The video shows the sound and basic effe
 ## Circuit
 ![WhatsApp Image 2020-05-17 at 19 35 28 (1)](https://user-images.githubusercontent.com/64489709/82157798-e9de0200-9883-11ea-8f1e-8e1a597a70e9.jpeg)
 
-This is the final circuit that I have used in the amp. The circuit has eight main components but you do not need all of them.
-* Arduino Uno (needed)
-* Power supply (needed)
-* Input stage (needed)
-* Output stage (needed)
-* Class D amplifier (needed)
-* Display (not needed)
-* Buttons (not needed)
-* Speaker (needed)
+This is the final circuit that I have used in the amp. 
+* Arduino Uno 
+* Power supply
+* Input stage 
+* Output stage 
+* Class D amplifier 
+* Display 
+* Buttons 
+* Speaker 
 
 
 ## Parts
