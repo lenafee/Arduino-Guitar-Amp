@@ -1,13 +1,19 @@
-# CTAG Signature Guitar Amp
+# Little Arduino Uno based Guitar AMP
 
 ![ArduinoGuitarAmp (7)](https://user-images.githubusercontent.com/64489709/82821872-25408800-9ea5-11ea-9ca0-7bfcabd32c90.jpeg)
 
-
 ## Introduction
-This is a small all in one digial amp projekt. This base is an Arduino Uno. The amp is programmeble and you are able to design a hole variety of effects. The hole system can run on batteries and can be includet in nearly every speaker. In my case I addet the amp into an old broken guitar amp but I also tested it with an hifi speaker. The amp features a lcd display and different buttons to choose the effects. The project was inspired by the guitar pedal from Electrosmash https://www.electrosmash.com/pedalshield-uno.
+This is a small all in one digital AMP project. The base is an Arduino Uno. The Arduino Uno might not be very powerful but it is remarkable what it is capable of. The AMP is programmable and you are able to design a whole variety of effects. The system is portable because it can be used with a battery. I added the AMP into an old broken guitar AMP but I also tested it with a HIFI speaker. The AMP features a LCD display and buttons to choose the effects. The project was inspired by the guitar pedal from Electrosmash https://www.electrosmash.com/pedalshield-uno.
 
-## Examples
-Here are two example videos of the amp. The video shows the sound and basic effects of the amp.
+## Features
+* All in one guitar amplifier
+* Variety of effects
+* Display to show level and effect
+* Buttons to choose settings
+* Portable
+
+## ExAMPles
+Here are two example videos of the AMP. The video shows the sound and basic effects of the AMP.
 * https://www.youtube.com/watch?v=WST0WDY9Kv4
 * https://www.youtube.com/watch?v=0busb7s8Uys
 
@@ -15,39 +21,30 @@ Here are two example videos of the amp. The video shows the sound and basic effe
 * Volume
 * Boost
 * Overdrive
-    * Hard clipping
-    * Positive hard clipping
-    * Positive soft clipping
-    * Bias level soft clipping
-    * Bias level hard clipping
-    * Bias positive hard clipping
-* Distorsion
-    * Soft distorsion
-    * Hard Distorsion
+* Hard clipping
+* Positive hard clipping
+* Positive soft clipping
+* Bias level soft clipping
+* Bias level hard clipping
+* Bias positive hard clipping
+* Distortion
+* Soft distortion
+* Hard distortion
 * Reverb
 * Crazy sounds
 * Waveform generator
-   * Sine wave
-   * Triangle wave
+* Sine wave
+* Triangle wave
 * Tremolo
-   * Sine wave tremolo
-   * triangle wave tremolo
-   
+* Sine wave tremolo
+* triangle wave tremolo
+
 ## Circuit
+PullDown for the buttons. Resistors for the LEDs. Trimmer for the Display.
 ![WhatsApp Image 2020-05-17 at 19 35 28 (1)](https://user-images.githubusercontent.com/64489709/82157798-e9de0200-9883-11ea-8f1e-8e1a597a70e9.jpeg)
 
-This is the final circuit that I have used in the amp. 
-* Arduino Uno 
-* Power supply
-* Input stage 
-* Output stage 
-* Class D amplifier 
-* Display 
-* Buttons 
-* Speaker 
-
-
 ## Parts
+This is the circuit I soldered on Arduino Uno prototype shield.
 ![Verstaerker5](https://user-images.githubusercontent.com/64489709/80517029-b3981b80-8984-11ea-92c2-e7423980c42a.PNG)
 
 * C1, C4, C8 = 100nf
@@ -63,8 +60,8 @@ This is the final circuit that I have used in the amp.
 * K1 = screw terminal block
 * Arduino Prototype Shield
 * Arduino Uno
-* I'm using a adapter power supply. But you can use every 5v power supply with enough power.
-* Class d amp for example XH-M177 PAM8403
+* I'm using an adapter power supply. But you can use every 5v power supply with enough power.
+* Class d AMP for example XH-M177 PAM8403
 * MCP6002
 
 ![WhatsApp Image 2020-05-11 at 16 51 32](https://user-images.githubusercontent.com/64489709/82157760-b0a59200-9883-11ea-808b-009db763e531.jpeg)
@@ -76,7 +73,7 @@ This is the final circuit that I have used in the amp.
 * P2 = 10k Trimmer
 
 * red: Arduino power supply
-* yellow: Class D Amp power supply
+* yellow: Class D AMP power supply
 * green: Button 1-4
 * lightBlue: Led 1-4 supply
 
@@ -92,11 +89,3 @@ This is the final circuit that I have used in the amp.
 * Lochmaster
 * Reaper
 * VSDC Video Editor
-
-
-
-
-
-
-
-
