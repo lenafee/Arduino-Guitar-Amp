@@ -1,4 +1,4 @@
-# Little Arduino Uno based Guitar AMP
+# Little Arduino Uno based Guitar AMP 
 
 ![ArduinoGuitarAmp (7)](https://user-images.githubusercontent.com/64489709/82821872-25408800-9ea5-11ea-9ca0-7bfcabd32c90.jpeg)
 
