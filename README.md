@@ -43,6 +43,9 @@ Here are two example videos of the AMP. The video shows the sound and basic effe
 PullDown for the buttons. Resistors for the LEDs. Trimmer for the Display.
 ![WhatsApp Image 2020-05-17 at 19 35 28 (1)](https://user-images.githubusercontent.com/64489709/82157798-e9de0200-9883-11ea-8f1e-8e1a597a70e9.jpeg)
 
+## Challenge
+The Arduino Uno is not very powerful. Especially the memory and core speed are limited resulting in a short reverb for example. It has to be coded very efficiently to get a good performance. It is possible to improve the speed by using a more modern microcontroller like an ESP32. 
+
 ## Parts
 This is the circuit I soldered on Arduino Uno prototype shield.
 ![Verstaerker5](https://user-images.githubusercontent.com/64489709/80517029-b3981b80-8984-11ea-92c2-e7423980c42a.PNG)
