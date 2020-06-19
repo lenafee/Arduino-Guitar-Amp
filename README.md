@@ -40,7 +40,7 @@ Here are two example videos of the AMP. The video shows the sound and basic effe
 * triangle wave tremolo
 
 ## Circuit
-PullDown for the buttons. Resistors for the LEDs. Trimmer for the Display.
+
 ![WhatsApp Image 2020-05-17 at 19 35 28 (1)](https://user-images.githubusercontent.com/64489709/82157798-e9de0200-9883-11ea-8f1e-8e1a597a70e9.jpeg)
 
 ## Challenge
@@ -67,6 +67,7 @@ This is the circuit I soldered on Arduino Uno prototype shield.
 * Class d AMP for example XH-M177 PAM8403
 * MCP6002
 
+PullDown for the buttons. Resistors for the LEDs. Trimmer for the Display.
 ![WhatsApp Image 2020-05-11 at 16 51 32](https://user-images.githubusercontent.com/64489709/82157760-b0a59200-9883-11ea-808b-009db763e531.jpeg)
 
 * R13, R14, R15, R16 = 10kOhm
