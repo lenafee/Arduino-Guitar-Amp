@@ -1,6 +1,13 @@
 /*
  * This guitarAmp is based on the guitarPedal from Elektrosmash (https://www.electrosmash.com/pedalshield-uno)
+ * Licensed under a Creative Commons Attribution 3.0 Unported License.
+ * Link to the license: https://creativecommons.org/licenses/by/3.0/de/
+ * Based on rcarduino.blogspot.com previous work.
+ * www.electrosmash.com/pedalshield
+ * The original code is modified.
 */
+
+
 #include "distorsion.h"
 #include "echo.h"
 #include "generalFunctions.h"
